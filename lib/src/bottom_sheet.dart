@@ -15,6 +15,7 @@ class RubberBottomSheet extends StatefulWidget {
       @required this.animationController,
       @required this.lowerLayer,
       @required this.upperLayer,
+      this.background = Colors.white,
       this.menuLayer,
       this.scrollController,
       this.header,
@@ -32,6 +33,7 @@ class RubberBottomSheet extends StatefulWidget {
   final Widget menuLayer;
   final double dragFriction;
   final Function onTap;
+  final Color background;
 
   /// Called when the user stops scrolling, if this function returns a false the bottomsheet
   /// won't complete the next onDragEnd instructions
@@ -130,14 +132,7 @@ class RubberBottomSheetState extends State<RubberBottomSheet>
   Widget _buildSlideAnimation(BuildContext context, Widget child) {
     var layout;
     if (widget.menuLayer != null) {
-      layout = Stack(
-        children: <Widget>[
-          Align(
-              alignment: Alignment.bottomLeft,
-              child: _buildAnimatedBottomsheetWidget(context, child)),
-          Align(alignment: Alignment.bottomLeft, child: widget.menuLayer),
-        ],
-      );
+      layout =  widget.menuLayer;
     } else {
       layout = _buildAnimatedBottomsheetWidget(context, child);
     }
@@ -159,7 +154,7 @@ class RubberBottomSheetState extends State<RubberBottomSheet>
     return FractionallySizedBox(
         alignment: Alignment.bottomCenter,
         heightFactor: heightFactor,
-        child: child);
+        child: Container(color : widget.background,child: child));
   }
 
   @override
