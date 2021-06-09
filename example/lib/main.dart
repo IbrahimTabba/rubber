@@ -41,7 +41,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
         ),
         body: ListView(
           children: <Widget>[
-            RaisedButton(
+            ElevatedButton(
               child: Text("Default"),
               onPressed: () {
                 Navigator.push(
@@ -50,7 +50,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                 );
               },
             ),
-            RaisedButton(
+            ElevatedButton(
               child: Text("Menu"),
               onPressed: () {
                 Navigator.push(
@@ -59,7 +59,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                 );
               },
             ),
-            RaisedButton(
+            ElevatedButton(
               child: Text("Spring settings"),
               onPressed: () {
                 Navigator.push(
@@ -68,7 +68,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                 );
               },
             ),
-            RaisedButton(
+            ElevatedButton(
               child: Text("Scrolling"),
               onPressed: () {
                 Navigator.push(
@@ -77,7 +77,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                 );
               },
             ),
-            RaisedButton(
+            ElevatedButton(
               child: Text("Dismissable"),
               onPressed: () {
                 Navigator.push(
